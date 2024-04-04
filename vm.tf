@@ -1,0 +1,61 @@
+resource "azurerm_virtual_network" "vn123456_asc" {
+  name                = "vn123456_asc_network"
+  address_space       = ["10.0.0.0/16"]
+  location            = azurerm_resource_group.rg_asc.location
+  resource_group_name = azurerm_resource_group.rg_asc.name
+}
+
+resource "azurerm_subnet" "sn_asc" {
+  name                 = "internal"
+  resource_group_name  = azurerm_resource_group.rg_asc.name
+  virtual_network_name = azurerm_virtual_network.vn123456_asc.name
+  address_prefixes     = ["10.0.2.0/24"]
+}
+
+resource "azurerm_network_interface" "ni_asc" {
+  name                = "ni_asc"
+  location            = azurerm_resource_group.rg_asc.location
+  resource_group_name = azurerm_resource_group.rg_asc.name
+
+  ip_configuration {
+    name                          = "internal"
+    subnet_id                     = azurerm_subnet.sn_asc.id
+    private_ip_address_allocation = "Dynamic"
+    public_ip_address_id	  = azurerm_public_ip.ippublic1.id
+  }
+}
+
+resource "azurerm_public_ip" "ippublic1" {
+  name                = "Ip1"
+  resource_group_name = azurerm_resource_group.rg_asc.name
+  location            = azurerm_resource_group.rg_asc.location
+  allocation_method   = "Dynamic"
+}
+
+resource "azurerm_linux_virtual_machine" "vm_asc" {
+  name                = "rgascmachine"
+  resource_group_name = azurerm_resource_group.rg_asc.name
+  location            = azurerm_resource_group.rg_asc.location
+  size                = "Standard_DS1_v2"
+  admin_username      = "adminuser"
+  network_interface_ids = [
+    azurerm_network_interface.ni_asc.id,
+  ]
+
+  admin_ssh_key {
+    username   = "adminuser"
+    public_key = file("~/.ssh/id_rsa.pub")
+  }
+
+  os_disk {
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+  }
+
+  source_image_reference {
+    publisher = "Canonical"
+    offer     = "0001-com-ubuntu-server-jammy"
+    sku       = "22_04-lts"
+    version   = "latest"
+  }
+}
