@@ -19,7 +19,7 @@ $ az account list --query "[].{name:name, subscriptionId:id}" \
 $ az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/VotreSubscriptionId" 
 
 Etape 3
-Définir les variables d'environnement avec les infos obtenues via la derniere commande, comme ceci :
+Définir les variables d'environnement avec les infos obtenues via la derniere commande, comme ceci : \
 $ export ARM_SUBSCRIPTION_ID=SubscriptionId  \
 $ export ARM_CLIENT_ID=appId \
 $ export ARM_CLIENT_SECRET=password \
@@ -28,7 +28,8 @@ $ export ARM_TENANT_ID=tenant
 Etape 4
 Générer une clef publique SSH : \
 $ ssh-keygen -o \
-Et modifier le fichier vm.tf en conséquence 
+Et modifier le fichier vm.tf en conséquence : \
+
 
 Explication de main.tf 
 
