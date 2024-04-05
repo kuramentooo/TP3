@@ -1,6 +1,6 @@
 # TP3
 # **Objectif**
-L'objectif de ce TP est de mettre en place une VM Ubuntu22 et des ressources associées (Resource group, Storage Account, Virtual Network, Network Interface et une IP Publique) grace à Terraform via Azure.
+L'objectif de ce TP est de mettre en place une VM Ubuntu22 et des ressources associées (Resource group, Storage Account, Virtual Network, Network Interface et Public IP) grace à Terraform via Azure.
 
 # **Requirements** :
 Mettre Ubuntu a jour avec "sudo apt update && sudo apt upgrade -y" \
