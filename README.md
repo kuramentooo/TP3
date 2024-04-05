@@ -30,8 +30,7 @@ $ ssh-keygen -o
 Et modifier le fichier vm.tf en conséquence :  \
  " admin_ssh_key { \
     username   = "adminuser" \
-    public_key = **file("~/.ssh/id_rsa.pub")** \
-  } "
+    public_key = **file("~/.ssh/id_rsa.pub")** \ "
 
 # **Etape 5** 
 Valider et lancer terraform : 
