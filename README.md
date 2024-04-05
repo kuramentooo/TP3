@@ -25,7 +25,7 @@ $ export ARM_TENANT_ID=tenant
 
 # **Etape 4** 
 Générer une clef publique SSH : \
-$ ssh-keygen -o \
+$ ssh-keygen -o 
 
 Et modifier le fichier vm.tf en conséquence :  \
  " admin_ssh_key { \
@@ -36,11 +36,11 @@ Et modifier le fichier vm.tf en conséquence :  \
 # **Etape 5** 
 Valider et lancer terraform : 
 
-Explication de versions.tf \
+Explication de versions.tf 
 
-Explication de main.tf \ 
+Explication de main.tf 
 
-Explication de vm.tf \
+Explication de vm.tf 
 
 Explication de sa.tf 
 
