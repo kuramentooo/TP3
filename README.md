@@ -1,6 +1,6 @@
 # TP3
 # **Objectif**
-L'objectif de ce TP est de mettre en place une VM Ubuntu22 et des ressources associées (Resource group, Storage Account, Virtual Network et IP Publique) grace à Terraform via Azure.
+L'objectif de ce TP est de mettre en place une VM Ubuntu22 et des ressources associées (Resource group, Storage Account, Virtual Network, Network Interface et une IP Publique) grace à Terraform via Azure.
 
 # **Requirements** :
 Mettre Ubuntu a jour avec "sudo apt update && sudo apt upgrade -y" \
@@ -34,9 +34,9 @@ Et modifier le fichier vm.tf en conséquence :  \
 
 # **Etape 5** 
 Valider et lancer terraform : 
-$ Terraform validate
-$ Terraform init
-$ Terrafomr plan
+$ Terraform validate \
+$ Terraform init \
+$ Terrafomr plan \
 $ Terraform apply
 
 Récupérer l'IP publique de la machine sur azure et s'y connecter en SSH avec : \
@@ -44,11 +44,14 @@ $ ssh -i ~/.ssh/id_rsa.pub adminuser@ip_publique
 
 # Explication des fichiers : 
 
-versions.tf 
+versions.tf :
+Configure Terraform pour utiliser la version 3.0.x du fournisseur AzureRM afin de déployer des ressources Azure, tout en spécifiant que Terraform nécessite une version 0.14 ou supérieure. \
 
-main.tf 
+main.tf : \
+Crée un groupe de ressources Azure avec le nom "rg_asc" dans la région Est des Etats-Unis. \
 
-vm.tf 
+vm.tf : \
+Déploie une machine virtuelle Ubuntu22 dans Azure, avec une interface réseau, une adresse IP publique, et un sous-réseau dans un groupe de ressources spécifique déja crée dans le main.tf. \
 
-sa.tf 
-
+sa.tf : \
+Crée un compte de stockage Azure avec un niveau "Standard" et une réplication LRS, dans le groupe de ressources spécifié.
