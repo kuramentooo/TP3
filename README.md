@@ -27,6 +27,7 @@ Etape 4
 Générer une clef publique SSH : \
 $ ssh-keygen -o \
 Et modifier le fichier vm.tf en conséquence :  \
+
  " admin_ssh_key { \
     username   = "adminuser" \
     public_key = **file("~/.ssh/id_rsa.pub")** \
