@@ -44,14 +44,14 @@ $ ssh -i ~/.ssh/id_rsa.pub adminuser@ip_publique
 
 # Explication des fichiers : 
 
-versions.tf :
+**versions.tf :** \
 Configure Terraform pour utiliser la version 3.0.x du fournisseur AzureRM afin de déployer des ressources Azure, tout en spécifiant que Terraform nécessite une version 0.14 ou supérieure. 
 
-main.tf : \
+**main.tf** : \
 Crée un groupe de ressources Azure avec le nom "rg_asc" dans la région Est des Etats-Unis. 
 
-vm.tf : \
+**vm.tf** : \
 Déploie une machine virtuelle Ubuntu22 dans Azure, avec une interface réseau, une adresse IP publique, et un sous-réseau dans un groupe de ressources spécifique déja crée dans le main.tf. 
 
-sa.tf : \
+**sa.tf** : \
 Crée un compte de stockage Azure avec un niveau "Standard" et une réplication LRS, dans le groupe de ressources spécifié.
