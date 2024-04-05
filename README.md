@@ -34,12 +34,21 @@ Et modifier le fichier vm.tf en conséquence :  \
 
 # **Etape 5** 
 Valider et lancer terraform : 
+$ Terraform validate
+$ Terraform init
+$ Terrafomr plan
+$ Terraform apply
 
-Explication de versions.tf 
+Récupérer l'IP publique de la machine sur azure et s'y connecter en SSH avec : \
+$ ssh -i ~/.ssh/id_rsa.pub adminuser@ip_publique
 
-Explication de main.tf 
+# Explication des fichiers : 
 
-Explication de vm.tf 
+versions.tf 
 
-Explication de sa.tf 
+main.tf 
+
+vm.tf 
+
+sa.tf 
 
