@@ -41,7 +41,7 @@ $ Terrafomr plan \
 $ Terraform apply
 
 Récupérer l'IP publique de la machine sur azure et s'y connecter en SSH avec : \
-$ ssh -i ~/.ssh/id_rsa.pub adminuser@ip_publique
+$ ssh -i ~/.ssh/id_rsa adminuser@ip_publique
 
 # Explication des fichiers : 
 
