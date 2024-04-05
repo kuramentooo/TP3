@@ -2,7 +2,7 @@
 # **Objectif**
 L'objectif de ce TP est de mettre en place une VM Ubuntu22 et des ressources associées (Resource group, Storage Account, Virtual Network et IP Publique) grace à Terraform via Azure.
 
-# **Requirements** :\
+# **Requirements** :
 Mettre Ubuntu a jour avec "sudo apt update && sudo apt upgrade -y" \
 Installer terraform via cette documentation : https://computingforgeeks.com/how-to-install-terraform-on-ubuntu/ \
 Installer Azure CLI via cette documentation : https://learn.microsoft.com/fr-fr/cli/azure/install-azure-cli-linux?pivots=apt
@@ -34,7 +34,7 @@ Et modifier le fichier vm.tf en conséquence :  \
   } "
 
 # **Etape 5** 
-Valider et lancer terraform : \
+Valider et lancer terraform : 
 
 Explication de versions.tf \
 
