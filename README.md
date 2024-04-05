@@ -12,7 +12,8 @@ git clone https://github.com/kuramentooo/TP3.git
 
 # **Etape 2** 
 Se connecter à Azure : \
-$ az login \
+$ az login --use-device-code \
+Se rendre sur https://microsoft.com/devicelogin et entrer le code affiché \
 $ az account list --query "[].{name:name, subscriptionId:id}" \
 $ az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/VotreSubscriptionId" 
 
