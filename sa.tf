@@ -1,8 +1,3 @@
-# resource "azurerm_resource_group" "rg_asc" {
-#  name     = "compte_sto"
-#  location = "eastus"
-#}
-
 resource "azurerm_storage_account" "sa_asc" {
   name                     = "clemsvenad123456"
   resource_group_name      = azurerm_resource_group.rg_asc.name
