@@ -14,9 +14,9 @@ git clone https://github.com/kuramentooo/TP3.git
 
 Etape 2
 Se connecter à Azure :
-$ az login
-$ az account list --query "[].{name:name, subscriptionId:id}"
-$ az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/VotreSubscriptionId"
+$ az login \
+$ az account list --query "[].{name:name, subscriptionId:id}" \
+$ az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/VotreSubscriptionId" \
 
 Etape 3
 Définir les variables d'environnement avec les infos obtenues via la derniere commande, comme ceci :
